@@ -1,0 +1,126 @@
+\documentclass[12pt,a4paper]{moderncv}
+
+% ModernCV
+\moderncvcolor{blue}
+\moderncvstyle[symbols]{casual}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{lmodern}
+\usepackage[scale=0.78]{geometry}
+\setlength{\footskip}{90pt}
+\usepackage{xstring}
+
+% Default variant
+\providecommand{\cvtype}{sysadmin}
+
+% Personal info
+\name{Tiago}{Fernandes}
+\title{Curriculum Vitae}
+\address{Rua José Ferreira Tarré N.º 15, 1.º Dto}{Alverca do Ribatejo}{Portugal}
+\phone[mobile]{+351~924~223~636}
+\phone[fixed]{+351~21~957~2017}
+\email{tiagofer@me.com}
+\social[gitlab]{Tiagofer}
+\social[linkedin][https://www.linkedin.com/in/tiago-fernandes-672058125/]{Tiago Fefnandes}
+\born{1996–03–19}
+\quote{''Jack of All Trades, Master of None''}
+
+\photo[64pt][0.4pt]{./assets/CV-image.jpg}
+
+% Projects
+\newcommand{\projnetinfra}{%
+\cventry{2026--Present}{Self-Hosted Network Infrastructure}{Personal Project}{}{}{%
+Designed and maintain a self-hosted remote access homelab setup on Linux (SteamOS/Arch), including: a WireGuard VPN tunnel for secure remote access; firewall configuration and hardening (nftables/firewalld/ufw) with interface-scoped rules; SSH key-based authentication across multiple clients; dynamic DNS (DDNS) management for a self-hosted service reachable from outside the home network; and systemd service management for persistent infrastructure. Maintain an accompanying setup script for reproducible host configuration:~\url{https://gitlab.com/Tiagofer/steamos}}}
+
+\newcommand{\projcalc}{%
+\cventry{2026}{Scientific Calculator}{Personal Project --- Rust}{}{}{%
+Built a scientific calculator from scratch in Rust, including expression parsing and evaluation logic, as a self-directed project.~\url{https://gitlab.com/Tiagofer/rust-calculator}}}
+
+\newcommand{\projtheorybot}{%
+\cventry{2021}{TheoryBot}{Personal Project --- Discord Bot}{}{}{%
+Discord bot that teaches music theory concepts interactively.~\url{https://gitlab.com/Tiagofer/theorybot}}}
+
+\newcommand{\projdndbot}{%
+\cventry{2021}{DND-Bot}{Personal Project --- Discord Bot}{}{}{%
+Discord bot providing D\&D tabletop helper functionality.~\url{https://gitlab.com/Tiagofer/DND-Bot}}}
+
+\newcommand{\projdesktop}{%
+\cventry{}{Linux Desktop Customization}{Personal Project}{}{}{%
+Maintain personal forks of dwm, st, and dwmblocks (suckless tools), plus a customized Neovim configuration, alongside a broader personal dotfiles repository.}}
+
+% Skills
+\newcommand{\skillprogramming}{\cvitem{Programming}{Rust, C/C++, Python, Java, C\#, VB.NET}}
+\newcommand{\skillscripting}{\cvitem{Scripting}{Bash, Zsh, Perl, Awk}}
+\newcommand{\skillsystems}{\cvitem{Systems \& Infrastructure}{Linux (Arch, Debian-based distros), Unix, Windows; Docker, Podman; virtual machines (incl. VMware); init systems (systemd, OpenRC, runit)}}
+\newcommand{\skillnetworking}{\cvitem{Networking \& Security}{WireGuard, nftables/firewalld/ufw, DNS \& DDNS, SSH \& key-based authentication}}
+\newcommand{\skilldatabases}{\cvitem{Databases}{MySQL, PostgreSQL, MongoDB}}
+\newcommand{\skillweb}{\cvitem{Web Design}{HTML5, CSS3, JavaScript (React, Vue), Node.js}}
+\newcommand{\skillsci}{\cvitem{Scientific \& Typography}{Octave, \LaTeX}}
+\newcommand{\skilloffice}{\cvitem{Office}{Microsoft Office, including advanced Excel}}
+\newcommand{\skillfamiliar}{\cvitem{Also familiar with}{Lua, TypeScript, PHP, Haskell, Common Lisp, R, Batch, PowerShell, VBScript, OpenGL, Unity}}
+
+\begin{document}
+
+\makecvtitle{}
+
+\section{Projects}
+\IfStrEq{\cvtype}{sysadmin}{%
+  \projnetinfra{}
+  \projdesktop{}
+  \projcalc{}
+  \projtheorybot{}
+  \projdndbot{}
+}{%
+  \projcalc{}
+  \projtheorybot{}
+  \projdndbot{}
+  \projnetinfra{}
+  \projdesktop{}
+}
+
+\section{Job Experience}
+\cventry{2025--2025}{Customer Support}{Teleperformance}{Lisboa}{}{Meta Pro Team: customer support for Meta advertisers.}
+
+\section{Education}
+\cventry{2016--2020}{Bachelor's (dropped out)}{ISTEC}{Lisboa}{}{Computer Science.}
+\cventry{2014--2016}{Associate's Degree}{ISTEC}{Lisboa}{}{Networks and Informatics Systems Management, with internship at Consulteware.}
+\cventry{2011--2014}{High School}{Gago Coutinho}{Alverca do Ribatejo}{}{Sciences and Technology.}
+\cventry{c. 2014}{Codebit}{Participant}{}{}{Programming event/hackathon.}
+
+\section{Languages}
+\begin{cvcolumns}
+    \cvcolumn{}{\centerline{\textbf{Portuguese}}\centerline{Native}}
+    \cvcolumn{}{\centerline{\textbf{English}}\centerline{C2 Level}}
+    \cvcolumn{}{\centerline{\textbf{Spanish}}\centerline{A2 Level}}
+    \cvcolumn{}{\centerline{\textbf{French}}\centerline{A1 Level}}
+\end{cvcolumns}
+
+\section{Computer Skills}
+\IfStrEq{\cvtype}{sysadmin}{%
+  \skillsystems{}
+  \skillnetworking{}
+  \skillscripting{}
+  \skillprogramming{}
+  \skilldatabases{}
+  \skillweb{}
+  \skillsci{}
+  \skilloffice{}
+  \skillfamiliar{}
+}{%
+  \skillprogramming{}
+  \skillweb{}
+  \skilldatabases{}
+  \skillscripting{}
+  \skillsystems{}
+  \skillnetworking{}
+  \skillsci{}
+  \skilloffice{}
+  \skillfamiliar{}
+}
+
+\section{Other Skills \& Interests}
+\cvitem{Music}{Intermediate skills in piano, guitar, and various other instruments; composition \& production skills in MuseScore, Ardour, Reaper, Ableton, and FL Studio.}
+\cvitem{Other}{Practical understanding of electrical/mechanical engineering concepts, video editing, photography, \& animation.}
+\cvitem{Learning}{Broad self-directed learning across science, mathematics, engineering, philosophy, history, linguistics, and music theory.}
+
+\end{document}
+
