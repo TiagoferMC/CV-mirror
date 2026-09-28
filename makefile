@@ -1,12 +1,9 @@
 SYSADMIN_DIR := ./out/sysadmin
 DEVELOPER_DIR := ./out/developer
 
-.PHONY: sysadmin developer clean
+.PHONY: all clean sysadmin developer
 
-all:
-	make clean
-	make sysadmin
-	make developer
+all: clean sysadmin developer
 
 sysadmin:
 	mkdir -p $(SYSADMIN_DIR)
@@ -27,5 +24,5 @@ developer:
 		CV.tex
 
 clean:
-	rm -rf out/
+	rm -rf out/* $(EXEC)
 
