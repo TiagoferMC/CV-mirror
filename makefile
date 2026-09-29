@@ -24,5 +24,5 @@ developer:
 		CV.tex
 
 clean:
-	rm -rf out/* $(EXEC)
+	rm -rf ./out/*
 
